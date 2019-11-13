@@ -4,12 +4,13 @@ const path = require('path')
 const hbs = require('hbs')
 const multer = require('multer')
 const filter = require('./filter.js')
+var flash = require('express-flash')
 
 const publicDirectory = path.join('__dirname','../public')
 const viewsPath = path.join('__dirname','../views')
 const partialspath = path.join('__join','../views/partials')
 
-
+ 
 app.use(express.static(publicDirectory))
 app.set('view engine','hbs')
 app.set('views',viewsPath)
@@ -46,14 +47,11 @@ app.post('/uploadfile', upload.single('myFile'), (req, res, next) => {
     error.httpStatusCode = 400
     return next(error)
   }
-  
-  console.log("Fie uploaded sucessfully!")
-    res.send(file)
-
 
     filter.startScan(file_name,()=>{
     		console.log("scanning done!...")
-    })
+        res.render('index',{downloadLink: DfileName})
+     })
 
 })
 

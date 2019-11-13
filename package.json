@@ -11,6 +11,7 @@
   "dependencies": {
     "asyncloop": "0.0.1",
     "express": "^4.17.1",
+    "express-flash": "0.0.2",
     "formidable": "^1.2.1",
     "hbs": "^4.0.6",
     "i": "^0.3.6",

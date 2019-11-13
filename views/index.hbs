@@ -8,7 +8,7 @@
 .btn {
   background-color: DodgerBlue;
   border: none;
-  color: white;
+  color: blue;
   padding: 12px 30px;
   cursor: pointer;
   font-size: 20px;
@@ -24,12 +24,16 @@
 
  
  	<form action="/uploadfile" enctype="multipart/form-data" method="POST"> 
-   <input class = "btn" type="file" name="myFile" />
+   <input class = "btn" type="file" name="myFile" required="true" />
   <button class="btn">Upload a file</button>
    </form>
    	<br><br>
-   	 	<button class="btn" disable><i class="fa fa-download"></i> Download</button>
 
-  </body>
+{{#if downloadLink}}
+     <a href="{{ downloadLink }}" download>
+      <button class=".btn">Download </button>  
+     </a>	
+     {{/if}}
+   </body>
 </html>
 

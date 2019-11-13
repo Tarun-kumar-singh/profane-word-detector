@@ -1,5 +1,5 @@
-{
-  "words":[
+
+module.exports = [
     "ahole",
     "anus",
     "ash0le",
@@ -454,4 +454,4 @@
     "yed",
     "zabourah"
   ]
-}
+ 
