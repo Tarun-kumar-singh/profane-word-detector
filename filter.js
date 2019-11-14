@@ -13,7 +13,8 @@ fs.readFile('./uploadfile/'+ fileName,'utf8',(err,result)=>{
 		 asyncloop(spamlist,(element,next) =>{
  			count = 0			 	
 		 	while((result.includes(element))){
- 			 	result = result.replace(element,"*")
+		 		rep = '*'
+ 			 	result = result.replace(element,rep.repeat(element.length))
 			 	count = count + 1
 			 }
 			 map[element] = count 
